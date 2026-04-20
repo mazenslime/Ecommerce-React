@@ -45,7 +45,7 @@ function App() {
           <Route path="/Login" element={<Login scrolls={setscrol} setlogin={setlogin} width={width}/>} /> 
           <Route path="/Pagecart" element={<Pagecart orders={orders} setorders={setorders}  scrolls={setscrol} width={width}/>} />
           <Route path="/pro/:id" element={<Pro  orders={orders} defs={setorders} scrll={setscrol} width={width}/>} />
-          <Route path="/ALLPROUDACT" element={<ALLPROUDACT width={width}   setscrol={setscrol} />} />
+          <Route path="/ALLPROUDACT" element={<ALLPROUDACT width={width} orders={orders} setorders={setorders}  setscrol={setscrol} />} />
       </Routes>
     </BrowserRouter>
     </>

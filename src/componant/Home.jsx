@@ -13,7 +13,7 @@ const Home = ({orders,setorders}) => {
   return (
     <>
         <Hero/>
-        <Catigoury pro={proudacts}/>
+        {/* <Catigoury pro={proudacts}/> */}
         <Proudacts pro={proudacts} order={orders} deforder={setorders}/>
         <Footear/>
     </>

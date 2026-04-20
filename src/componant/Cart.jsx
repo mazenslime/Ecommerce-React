@@ -26,7 +26,7 @@ const Cart = ({pro,proudact ,orders,defs}) =>{
         </div>
         <div className='flex flex-row justify-evenly w-full' >
             <BButton orders={orders} defs={defs} proudact={proudact} />
-            <button className='bg-white w-1/7 px-2 py-0.5 rounded cursor-pointer font-semibold' onClick={()=>go(proudact['id'])}><i class="fa-solid fa-eye"></i></button>
+            <button className='bg-white w-1/7 px-2 py-0.5 rounded cursor-pointer text-black font-semibold' onClick={()=>go(proudact['id'])}><i class="fa-solid fa-eye"></i></button>
         </div>
     </motion.div>
   </>

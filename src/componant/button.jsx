@@ -3,6 +3,8 @@ import Pagecart from './Pagecart';
 import { useNavigate } from 'react-router-dom';
 const BButton = ({orders, defs, proudact,width}) => {
     console.log(proudact);
+    console.log(proudact['images'][0]);
+    
     const [alert,setalert]=useState(false)
     const navigation=useNavigate()
     function Alertcomponant(){
@@ -16,7 +18,8 @@ const BButton = ({orders, defs, proudact,width}) => {
       function addtocart(id,title,catigoury,price,photo){
           if(orders.length===0){
               console.log("done1");
-              let data={id:id,title:title,catigoury:catigoury,price:price,photo:photo,quntity:1}
+              console.log(photo);
+              let data={id:id,title:title,catigoury:catigoury,price:price,photo:proudact['images'][0],quntity:1}
               console.log(data);
               defs([...orders,data])
               navigation('/Pagecart')
@@ -35,8 +38,11 @@ const BButton = ({orders, defs, proudact,width}) => {
               return true
             }else{
               console.log("done1");
-              let data={id:id,title:title,catigoury:catigoury,price:price,photo:photo,quntity:1}
+              console.log(photo);
+              let data={id:id,title:title,catigoury:catigoury,price:price,photo:`${proudact['images'][0]}`,quntity:1}
               console.log(data);
+              console.log(photo);
+              
               defs([...orders,data])
               navigation('/Pagecart')}
               return false
@@ -45,7 +51,7 @@ const BButton = ({orders, defs, proudact,width}) => {
           }                                                                                                                                                        
        
   return (
-      <button className={`${width>868?'w-1/2  ':'w-3/4'} cursor-pointer px-4 py-0.5 rounded bg-black text-white text-md font-italic   h-8`} onClick={()=>{addtocart(proudact['id'],proudact['title'],proudact['category'],proudact['price']),proudact['images'][0]}} attid={proudact['product_id']}>buy now</button>
+      <button className={`${width>868?'w-1/2  ':'w-3/4'} cursor-pointer px-4 py-0.5 rounded bg-black text-white text-md font-italic   h-8`} onClick={()=>{addtocart(proudact['id'],proudact['title'],proudact['category'],proudact['price']),`${proudact['images'][0]}`}} attid={proudact['id']}>buy now</button>
   )
 }
 export default BButton

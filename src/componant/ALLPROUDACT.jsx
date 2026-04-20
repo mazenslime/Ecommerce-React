@@ -3,7 +3,7 @@ import React,{ useEffect, useState } from 'react'
 import axios from 'axios'
 import Cart from './Cart'
 import Sidepar from './Sidepar'
-const ALLPROUDACT = ({width,setscrol}) => {
+const ALLPROUDACT = ({width,setscrol,orders,setorders}) => {
     const Location=useLocation()
     useEffect(()=>{
         setscrol(true);
@@ -45,10 +45,10 @@ const ALLPROUDACT = ({width,setscrol}) => {
   return (
     <div className='w-full h-full flex flex-col gap-5 justify-center align-center mt-20 mb-20 '>
             <div className={`w-full flex flex-col  ${width>868?'':'px-5'} pb-20   text-white  `}>
-                <Sidepar proudact={proudact}/>
+                <Sidepar proudact={proudact} width={width}/>
                     <div className='w-full h-full  flex flex-row flex-wrap gap-10 justify-center '>
                         {elemants?.map((ele,index)=>{
-                            return <Cart key={index} pro={proudact} proudact={ele}/>
+                            return <Cart key={index} pro={proudact} orders={orders} defs={setorders} proudact={ele}/>
                         })}
                     </div>
             </div>
