@@ -9,7 +9,7 @@ const ALLPROUDACT = ({width,setscrol,orders,setorders}) => {
         setscrol(true);
     })
     let search=""
-    console.log(Location);
+    
     if(Location['state']==null){
         search=""
     }else{
@@ -39,8 +39,6 @@ const ALLPROUDACT = ({width,setscrol,orders,setorders}) => {
             setelemants(fil)
         }
     },[search,proudact])
-
-    console.log(elemants);
     
   return (
     <div className='w-full h-full flex flex-col gap-5 justify-center align-center mt-20 mb-20 '>

@@ -16,7 +16,7 @@ const Contaextapi = ({orders,setorders}) => {
       }
       getproudact()
     },[])
-    console.log(proudacts);
+    
     
   return (
     <ProudactContext.Provider value={{ proudacts }}>

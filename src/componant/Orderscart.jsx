@@ -37,7 +37,7 @@ const Orderscart = ({setorders,orders,ids,imag,title,catigoury,price,quatity,set
                     ele['quntity']=quantity+1
                 }
             })
-            console.log(orders);
+            
             
         }
         function Sub(){
@@ -50,7 +50,7 @@ const Orderscart = ({setorders,orders,ids,imag,title,catigoury,price,quatity,set
                     ele['quntity']=quantity-1
                 }
                 })
-                console.log(orders);
+                
             }
         }
   return (

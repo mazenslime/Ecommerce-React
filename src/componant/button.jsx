@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Pagecart from './Pagecart';
 import { useNavigate } from 'react-router-dom';
 const BButton = ({orders, defs, proudact,width}) => {
-    console.log(proudact);
-    console.log(proudact['images'][0]);
+    
+    
     
     const [alert,setalert]=useState(false)
     const navigation=useNavigate()
@@ -17,31 +17,31 @@ const BButton = ({orders, defs, proudact,width}) => {
 }
       function addtocart(id,title,catigoury,price,photo){
           if(orders.length===0){
-              console.log("done1");
-              console.log(photo);
+              
+              
               let data={id:id,title:title,catigoury:catigoury,price:price,photo:proudact['images'][0],quntity:1}
-              console.log(data);
+              
               defs([...orders,data])
               navigation('/Pagecart')
           }else{
-          console.log("done");
+          
           orders.find((ele)=>{
             if(ele['id']==id){
-              console.log("done1");
+              
               orders.find((ele)=>{
                 if(ele['id']===id){
                     ele['quntity']=ele['quntity']+1
               }})
-              console.log(orders);
+              
             //   setalert(true)
             Alertcomponant()
               return true
             }else{
-              console.log("done1");
-              console.log(photo);
+              
+              
               let data={id:id,title:title,catigoury:catigoury,price:price,photo:`${proudact['images'][0]}`,quntity:1}
-              console.log(data);
-              console.log(photo);
+              
+              
               
               defs([...orders,data])
               navigation('/Pagecart')}

@@ -6,7 +6,7 @@ import Rating from './Rating'
 const Pro = ({orders, defs, scrll, width}) => {
   const Location=useLocation()
   const data=Location['state']['proudact']
-  console.log(data);
+  
     useEffect(()=>{
         scrll(true);
     },[])

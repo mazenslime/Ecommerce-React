@@ -48,8 +48,8 @@ const Pagecart = ({orders,setorders,scrolls,width}) => {
       <Found />
       <div className={` ${width > 868 ? 'w-full pl-10 pr-10' : 'w-full text-center'} h-fit pt-10  flex flex-col gap-5`}>
         {(data||[]).map((ele,i)=>{
-          console.log(ele);
-          console.log(ele['photo']);
+          
+          
           
          return(<Orderscart setorders={setorders}  orders={orders} key={i} ids={ele['id']} imag={ele['photo']} title={ele['title']} catigoury={ele['catigoury']} price={ele['price']} quatity={ele['quntity']} setcheack={setcheack} width={width}/>)
         })}

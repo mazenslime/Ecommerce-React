@@ -1,7 +1,7 @@
 import { select } from 'motion/react-client';
 import { useNavigate } from 'react-router-dom'
 const Sidepar = ({proudact, width}) => {
-    console.log(proudact);
+    
     const navigate = useNavigate();
     let list=["ALL"];
     proudact.map((ele)=>{
@@ -11,7 +11,6 @@ const Sidepar = ({proudact, width}) => {
     })
     function clicked(category,Width) {
         // Handle category click event
-        console.log("done");
         navigate("/ALLPROUDACT",{state:{search:category}});
     }
   return (

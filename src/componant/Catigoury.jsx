@@ -19,7 +19,7 @@ const Catigoury = ({pro}) => {
                 img.push(a)
         }
     })
-    console.log(img);
+    
         
   return (
     <>
