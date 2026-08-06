@@ -6,7 +6,6 @@ import { BrowserRouter, data, Outlet, Route, Routes } from 'react-router-dom'
 export const  ProudactContext=createContext()
 const Contaextapi = ({orders,setorders}) => { 
   const [proudacts,setproudact]=useState([])
-  console.log(orders)
     useEffect(()=>{
       const getproudact=async()=>{
         // https://fakestoreapi.com/products

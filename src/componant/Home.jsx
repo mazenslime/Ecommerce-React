@@ -8,8 +8,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Catigoury from './Catigoury'
 const Home = ({orders,setorders}) => {
   const  {proudacts}  = useContext(ProudactContext) || {}
-  console.log(proudacts)
-  console.log(orders)
   return (
     <>
         <Hero/>

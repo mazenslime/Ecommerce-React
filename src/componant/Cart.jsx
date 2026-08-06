@@ -4,7 +4,6 @@ import { motion } from 'motion/react'
 import BButton from './button'
 import { Link, useNavigate } from 'react-router-dom'
 const Cart = ({pro,proudact ,orders,defs}) =>{
-  console.log(proudact)
   const navigation=useNavigate()
   function go(id){
     navigation(`/Pro/${id}`,{state:{proudact:proudact}})

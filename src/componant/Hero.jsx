@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import one from '../assets/—Pngtree—a-3d-rendered--modern--minimalistic-product-displa_16409176.jpg'
-import two from '../assets/—Pngtree—ecommerce website with shopping cart_3515047.jpg'
+import one from '../assets/—Pngtree—a-3d-rendered--modern--minimalistic-product-displa_16409176.webp'
+import two from '../assets/—Pngtree—ecommerce website with shopping cart_3515047.webp'
 const Hero = () => {
     let img=[one,two]
     const [background,setground]=useState(one)
