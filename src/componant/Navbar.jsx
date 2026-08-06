@@ -44,7 +44,7 @@ function searched(){
     <motion.div
        initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.25 }}
      className={`${width < 868 ? 'flex-col w-1/2 bg-black h-lvh items-start pl-10 pt-30 gap-10' : `flex-row w-full left-0 justify-evenly ${scro?'bg-black rounded-b-lg w-80  ':'bg-none'} items-center`} flex   z-100    h-20 fixed top-0 ${open?'left-0':'-left-100'}  transition-all duration-500 ease-in-out `}>
         {/* Logo */}
         <div className="logo">
