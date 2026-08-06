@@ -2,10 +2,11 @@ import React from 'react'
 import Btnrejest from './btnrejest'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-const Login = ({scrolls, setlogin, width}) => {
+const Login = ({scrll,scrolls, setlogin, width}) => {
   const [email,setemail]=React.useState('')
   const [password,setpassword]=React.useState('')
   useEffect(()=>{
+    if(scrll!=false)
       scrolls(false);
   })
 
