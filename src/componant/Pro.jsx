@@ -1,28 +1,36 @@
 import React, { useEffect,useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import BButton from './button'
-import Rating from './Rating'
 
 const Pro = ({orders, defs, scrll, width}) => {
   const Location=useLocation()
   const data=Location['state']['proudact']
-  
-    useEffect(()=>{
-        scrll(true);
-    },[])
+  const [image,setimag]=useState(data?.images[0])
   return (
-    <div className={` ${width>868?'grid grid-cols-2 pr-20 pl-20':'flex flex-col '} gap-3  w-full h-lvh align-center text-white p-5 justify-between pt-40 `}>
-      <div className='w-full h-full  flex flex-col gap-5 justify-center align-center  pb-10'>
-        <img src={data['images'][0]} alt="" className='w-100 h-100 ' />
+    <div className={`gap-3 flex flex-col space-y-5 w-full text-white`}>
+      <div className='relative w-full min-h-1/4 flex flex-col gap-5 transition-all duration-300  '>
+        <img src={image} alt="" className='w-full  min-h-1/4  md:w-3/4 md:mx-auto' />
+        <div className='absolute z-1000 bottom-10 left-1/2 -translate-x-1/2 gap-5 space-x-3 '>
+          {data?.images?.map((ele,index)=>{
+             return <button className={`${data?.images[index]==image?'bg-white':'bg-black'} w-5 h-5 cursor-pointer   rounded-full`} onClick={()=>setimag(data?.images[index])}></button>
+          })}
+        </div>
       </div>
-      <div className='w-full h-full  flex flex-col gap-7 justify-center align-center  pb-10'>
-        <p className='text-gray-700   text-xl '>{data['category']}</p>
-        <p className='text-black font-bold text-2xl  '>{data['name']}</p>
-        <Rating rate={data['rating']}/>
-        <p className='text-black  font-bold text-3xl '>{data['price']}<span className='text-sm'> $</span> </p>
-         <p className='text-gray-900 font-semibold  text-sm '>{data['description']}</p>
-         <div className={`flex flex-row ${width>868?'justify-left':'justify-left'}  gap-2`} >
-                <BButton orders={orders} defs={defs} proudact={data} width={width}/>
+      <div className='w-3/4 h-1/2 mx-auto  flex flex-col gap-7 justify-center align-center space-y-4  pb-10 '>
+       <div>
+            <p className='text-black  text-md  font-light  '>The single collection</p>
+            <p className='text-black font-bold text-2xl  '>{data?.title}</p>
+            <p className='text-black  font-light text-2xl '>{data?.price}<span className='text-sm'> $</span> </p>
+       </div>
+        <p className='text-black font-light  text-md '>{data?.description}</p>
+        {/* <p className='text-gray-700  font-semibold  text-xl '>{data?.category?.name}</p> */}
+        {/* <Rating rate={data?.rating}/> */}
+         <div className={`flex flex-row items-center ${width>868?'justify-left':'justify-left'} w-full justify-between  gap-2`} >
+          <div className='flex-col space-y-1'>
+            <p className='text-black font-bold text-2xl  '>{data?.title}</p>
+            <p className='text-black  font-light text-2xl '>{data?.price}<span className='text-sm'> $</span> </p>
+          </div>
+            <BButton orders={orders} defs={defs} proudact={data} width={width}/>
         </div>
       </div>
     </div>

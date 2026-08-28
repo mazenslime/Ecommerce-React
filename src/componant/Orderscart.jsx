@@ -15,7 +15,7 @@ const Orderscart = ({setorders,orders,ids,imag,title,catigoury,price,quatity,set
                 let quan=(ele['price']*ele['quntity'])
                 quan=Number(quan)
                 prices+=quan
-            })
+    })
     }
     useEffect(()=>{
         cheackouts()
@@ -54,18 +54,30 @@ const Orderscart = ({setorders,orders,ids,imag,title,catigoury,price,quatity,set
             }
         }
   return (
-        <div className={` ${width > 868 ? 'w-full ' : 'w-full  text-center'} flex flex-row   w-300 align-center bg-black text-white p-5 justify-between`}>
-            <img src={imag} alt="" className={` ${width > 868 ? 'w-50' : 'w-25'}`} />
-            <div className={` ${width < 868 ? 'w-full flex-col justify-start  ' : 'w-full flex-row '} items-center flex gap-2`}>
-              <h3 className={` ${width > 868 ? 'w-100' : 'w-full'}`}>{title}</h3>
-              <p className='w-50'>{catigoury}</p>
-              <p className='w-50'>{quantity==0?price:price*quantity}</p>
-              <div className='flex flex-row items-center justify-center gap-3'>
-                <button className='bg-gray-500 w-8 h-8  cursor-pointer ' onClick={Add}>+</button>
-                <p>{quantity}</p>
-                <button className='bg-gray-500 w-8 h-8 cursor-pointer' onClick={Sub}>-</button>
-                <button className='bg-red-500  font-bold px-2 py-1 h-8   cursor-pointer' onClick={()=>{Delet(ids)}}>Delet</button>
-              </div>
+        <div className={`${width>600?' w-3/4 px-4 ':'w-full'} flex flex-row border-b-1 border-gray-500 py-2 `}>
+            <div className={`${width>600?' w-1/4':'w-1/2'} `}>
+                <img src={imag} alt="" className={`w-full`} />
+            </div>
+            <div className={`${width>600?' w-1/4':'w-1/2'}  grid grid-row-2 content-between px-4`}>
+                <div className={`w-full   ${width>600?'flex justify-between items-center':'flex flex-col'}   `} >
+                    <div>
+                       <h3 className={` ${width > 868 ? 'w-100' : 'w-full'}`}>{title}</h3>
+                        <p className='w-50'>{catigoury}</p>
+                    </div>
+                    <div className={`${width>600?'w-full text-center':'text-left'} `}>
+                        <p className='w-full  text-black'>{quantity==0?price:price*quantity}</p>
+                    </div>
+                </div>
+                <div className='flex  justify-between '>
+                    <div className='w-fit h-fit flex flex-row gap-2  border-1 border-gray-500 px-2 py-1  items-center '>
+                        <button className=' w-8 h-8  cursor-pointer rounded-lg ' onClick={Add}>+</button>
+                        <p>{quantity}</p>
+                        <button className=' w-8 h-8 cursor-pointer rounded-lg' onClick={Sub}>-</button>
+                    </div>
+                    <div className='w-full '>
+                        <button className='w-full text-end px-2 py-1 h-8 cursor-pointer' onClick={()=>{Delet(ids)}}>Delet</button>
+                    </div>
+                </div>
             </div>
         </div>
   )

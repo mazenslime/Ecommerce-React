@@ -8,7 +8,7 @@ const Rating = ({rate}) => {
     }
     const data=rate
     function Rates(){
-            return<div className='w-5 h-5 bg-amber-600 '></div>   
+            return<div className='w-5 h-5  border-amber-600 border-tr-1 border-tl-1 border-bl-1 border-br-1  '></div>   
     }
   return (
     // <div>{data['rate']}</div>

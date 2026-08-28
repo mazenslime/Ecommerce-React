@@ -1,16 +1,20 @@
 import React from 'react'
 import Cart from './Cart'
-const Proudacts = ({pro,order,deforder}) => {
+import {Link} from 'react-router-dom'
+const Proudacts = ({pro,order,deforder,setLoveprouduct,Loveprouduct}) => {
   return (
-    <>
-    <h2 className=' mt-50 text-center align-middle font-bold text-3xl'>Proudacts</h2>
-    <div className='relative w-full h-full py-20 px-10 flex flex-row flex-wrap gap-20 justify-center'>
-        {pro.map((ele,i)=>{
-              return <Cart key={i} pro={pro} proudact={ele} orders={order} defs={deforder}/>
+  <>
+  <div className='flex w-full  justify-between items-center mt-20 mb-10 '>
+    <h2 className='text-2xl sm:text-sm  md:text-md'>Trinding Now</h2>
+     <p className='text-lg sm:text-sm  md:text-md text-blue-500  font-semibold '><Link to={'/ALLPROUDACT'}>view all prouducts</Link></p>
+  </div>
+  <div className='relative w-full h-full flex flex-row flex-wrap gap-10 '>
+        {pro?.map((ele,i)=>{
+              return <Cart key={i} pro={pro} proudact={ele} orders={order} defs={deforder} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
         })}
-    </div>
+  </div>
   </>
   )
 }
 
-export default Proudacts
+export default React.memo(Proudacts)

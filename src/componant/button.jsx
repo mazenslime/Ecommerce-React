@@ -51,7 +51,7 @@ const BButton = ({orders, defs, proudact,width}) => {
           }                                                                                                                                                        
        
   return (
-      <button className={`${width>868?'w-1/2  ':'w-3/4'} cursor-pointer px-4 py-0.5 rounded bg-black text-white text-md font-italic   h-8`} onClick={()=>{addtocart(proudact['id'],proudact['title'],proudact['category'],proudact['price']),`${proudact['images'][0]}`}} attid={proudact['id']}>buy now</button>
+      <button className={`${width>868?'w-30 h-10':'w-3/4'} cursor-pointer px-4 py-0.5  bg-[#1B3022] text-white text-md font-italic   h-8`} onClick={()=>{addtocart(proudact?.id,proudact?.title,proudact?.category.name,proudact?.price,`${proudact?.images[0]}`)}} attid={proudact?.id}>buy now</button>
   )
 }
 export default BButton

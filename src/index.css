@@ -1,1 +1,36 @@
+
+.playfair-display-uniquifier {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style:normal;
+}
+.inter-uniquifier {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+h1{
+  font-family: "Playfair Display", serif;
+}
+h2{
+  font-family: "Playfair Display", serif;
+}
+
+h3,h4,h5,h6,p,label{
+  font-family: "Inter", sans-serif;
+}
 @import "tailwindcss";

@@ -21,10 +21,10 @@ const Footear = () => {
       { name: 'Cookie Policy', href: '#' }
     ],
     social: [
-      { name: 'Facebook', icon: '📘', href: '#' },
-      { name: 'Twitter', icon: '𝕏', href: '#' },
-      { name: 'Instagram', icon: '📷', href: '#' },
-      { name: 'LinkedIn', icon: '💼', href: '#' }
+      { name: 'Facebook', icon: '', href: '#' },
+      { name: 'Twitter', icon: '', href: '#' },
+      { name: 'Instagram', icon: '', href: '#' },
+      { name: 'LinkedIn', icon: '', href: '#' }
     ]
   }
 
@@ -79,7 +79,7 @@ const Footear = () => {
           {/* Contact & Newsletter */}
           <div>
             <h3 className='text-lg font-bold mb-4'>Connect With Us</h3>
-            <p className='text-gray-300 mb-4'>Email: support@ecommerce.com</p>
+            <p className='text-gray-300 mb-4'>Email: support@Zearo.com</p>
             <p className='text-gray-300 mb-4'>Phone: +1 (555) 123-4567</p>
             <div className='flex gap-4'>
               {footerLinks.social.map((link, idx) => (
@@ -102,10 +102,10 @@ const Footear = () => {
         {/* Bottom Footer */}
         <div className='flex flex-col md:flex-row justify-between items-center'>
           <div className='text-gray-400 text-sm mb-4 md:mb-0'>
-            © 2024 ECommerce Store. All rights reserved.
+            © 2024 ZEARO Store. All rights reserved.
           </div>
           <div className='text-gray-400 text-sm'>
-            Designed with ❤️ | Made for you
+            Designed with | Made for you
           </div>
         </div>
       </div>

@@ -18,9 +18,7 @@ const Catigoury = ({pro}) => {
                     a.push(ele['category'])
                 img.push(a)
         }
-    })
-    
-        
+    })        
   return (
     <>
     <div className='w-full  flex flex-row items-center justify-between gap-2 px-10 py-2 pt-20'>
