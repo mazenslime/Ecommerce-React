@@ -59,7 +59,7 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
                     </div>
                 </div>
             </div>
-            {proudact.length==0?<div className="text-black min-h-80 text-4xl sm:text-sm md:text-2xl font-bold  flex justify-center ">Not prouduct find</div>:
+            {proudact.length==0?<div className="text-black min-h-80 text-4xl sm:text-sm md:text-2xl font-bold  flex justify-center ">{proudact==undefined?'Loading.....':'Not prouduct find'}</div>:
             <div className="min-h-100 px-10  relative w-full h-full flex flex-row flex-wrap gap-10">
                 {proudact?.map((ele,i)=>{
                         return <Cart key={i} proudact={ele} orders={orders} defs={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
