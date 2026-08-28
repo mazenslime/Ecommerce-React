@@ -20,7 +20,17 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
         search=Location['state']['search']
     }
     const[proudact,setproudact]=useState([])
+    const [Loading,setLoding]=useState()
     const[elemants,setelemants]=useState()
+
+    useEffect(()=>{
+        if(proudact.length==0){
+            console.log(proudact);     
+            setLoding(false)
+        }else{
+            setLoding(true) 
+        }
+    },[proudact])
 
     useEffect(()=>{
       const getproudact=async()=>{
@@ -59,7 +69,7 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
                     </div>
                 </div>
             </div>
-            {proudact.length==0?<div className="text-black min-h-80 text-4xl sm:text-sm md:text-2xl font-bold  flex justify-center ">{proudact==undefined?'Loading.....':'Not prouduct find'}</div>:
+            {proudact.length==0?<div className="text-black min-h-80 text-4xl sm:text-sm md:text-2xl font-bold  flex justify-center ">'Loding.....'</div>:
             <div className="min-h-100 px-10  relative w-full h-full flex flex-row flex-wrap gap-10">
                 {proudact?.map((ele,i)=>{
                         return <Cart key={i} proudact={ele} orders={orders} defs={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
