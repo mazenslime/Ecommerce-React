@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-function Sidebar({openside,setopenside,Listcategoury,cat,setcat}) {
+function Sidebar({openside,setopenside,Listcategoury,cat,setcat,width}) {
   return (
-    <div className={`fixed top-0 ${openside?'right-0':'-right-200'}  w-100 h-screen overflow-y-auto  z-[2000] bg-white transition-all duration-300`}>
+    <div className={`fixed top-0 w-100  ${openside?`right-0 ${width>600?' w-100':'w-screen'}`:'-right-200'}  h-screen overflow-y-auto  z-[2000] bg-white transition-all duration-300`}>
        <div className='w-full justify-end p-4'>
          <button className='text-black px-4 py-1 text-white cursor-pointer rounded-lg  bg-[#C5A059] ' onClick={()=>{setopenside((prev)=>!prev)}}>X</button>
        </div>

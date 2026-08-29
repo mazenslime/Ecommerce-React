@@ -53,7 +53,7 @@ function App() {
      </div>
       <Navbar scro={scrll} logins={login} width={width} open={open} setOpen={setOpen} setWidth={setWidth} ALL={ALL} />
       <Routes>
-          <Route path="/" element={<Contaextapi orders={orders} setorders={setorders} Listcategoury={Listcategoury} setpaginate={setpaginate} paginate={paginate} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} cat={cat} setcat={setcat}  />} />  
+          <Route path="/" element={<Contaextapi orders={orders} setorders={setorders} Listcategoury={Listcategoury} setpaginate={setpaginate} paginate={paginate} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} cat={cat} setcat={setcat} width={width}  />} />  
           <Route path="/rejester" element={<Rejster scrolls={setscrol} setlogin={setlogin} width={width} />} /> 
           <Route path="/Login" element={<Login scrll={scrll} scrolls={setscrol} setlogin={setlogin} width={width}/>} /> 
           <Route path="/Pagecart" element={<Pagecart orders={orders} setorders={setorders}  scrolls={setscrol} width={width}/>} />

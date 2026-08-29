@@ -4,7 +4,7 @@ import axios from 'axios'
 import Pro from './Pro'
 import { BrowserRouter, data, Outlet, Route, Routes, useLocation } from 'react-router-dom'
 export const  ProudactContext=createContext()
-const Contaextapi = ({orders,setorders,Listcategoury,setpaginate,paginate,setLoveprouduct,Loveprouduct,cat,setcat}) => { 
+const Contaextapi = ({orders,setorders,Listcategoury,setpaginate,paginate,setLoveprouduct,Loveprouduct,cat,setcat,width}) => { 
   const [proudacts,setproudact]=useState([])
   const Location=useLocation()
   const path=Location.pathname=='/';  
@@ -19,7 +19,7 @@ const Contaextapi = ({orders,setorders,Listcategoury,setpaginate,paginate,setLov
     
   return (
     <ProudactContext.Provider value={{ proudacts }}>
-      <Home orders={orders} setorders={setorders}  paginate={paginate} setpaginate={setpaginate} Listcategoury={Listcategoury} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} cat={cat} setcat={setcat}/>
+      <Home orders={orders} setorders={setorders}  paginate={paginate} setpaginate={setpaginate} Listcategoury={Listcategoury} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} cat={cat} setcat={setcat} width={width}/>
     </ProudactContext.Provider>
   )
 }

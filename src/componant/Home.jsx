@@ -8,14 +8,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Catigoury from './Catigoury'
 import Pagination from './Pagination'
 import CategouryMain from './CategouryMain'
-const Home = ({orders,setorders,Listcategoury,setLoveprouduct,Loveprouduct,cat,setcat}) => {
+const Home = ({orders,setorders,Listcategoury,setLoveprouduct,Loveprouduct,cat,setcat,width}) => {
   const  {proudacts}  = useContext(ProudactContext) || {}
   return (
     <>
       <Hero/>
       <div className="px-10 mt-40 mb-20 ">
         <CategouryMain Listcategoury={Listcategoury} cat={cat} setcat={setcat}/>
-        <Proudacts pro={proudacts} order={orders} deforder={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
+        <Proudacts pro={proudacts} order={orders} deforder={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} width={width}/>
       </div>
       <Footear/>
     </>

@@ -16,10 +16,10 @@ const Pagecart = ({orders,setorders,scrolls,width}) => {
     if(len==0){
       return(
         <div>
-        <div className={`flex flex-col w-1/2 h-100 text-center mx-auto justify-center space-y-4 sm:w-full md:w-3/4'}`}>
+        <div className={`flex flex-col  h-100 text-center mx-auto justify-center space-y-4 sm:w-full ${width>600?'font-bold text-lg w-1/2':'text-semibold text-sm w-3/4'}`}>
                   <i class="fa-solid fa-bag-shopping text-8xl text-gray-500/50 mb-6"></i>
-                  <h2 className={` ont-bold text-xl  `}>no proudact found</h2>
-                  <h3 className={`w-1/2 mx-auto font-semibold text-lg sm:text-sm sm:w-full md:text-md md:w-3/4 `}>Discover proudacts Please add some products to your cart</h3>
+                  <h2 className={``}>no proudact found</h2>
+                  <h3 className={`mx-auto  sm:w-full `}>Discover proudacts Please add some products to your cart</h3>
                   <div className='w-full flex justify-center'>
                     <button className='w-fit bg-[#1B3022] px-12 py-2 text-white  font-semibold cursor-pointer  ' onClick={()=>navigation('/')}>Go to shoping</button>
                   </div>

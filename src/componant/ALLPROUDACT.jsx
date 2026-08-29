@@ -56,7 +56,7 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
     
   return (
     <div className="w-full h-screen  px-10 ">
-        <Sidebar openside={openside} setopenside={setopenside} Listcategoury={Listcategoury} cat={cat} setcat={setcat} />
+        <Sidebar openside={openside} setopenside={setopenside} Listcategoury={Listcategoury} cat={cat} setcat={setcat} width={width} />
         <div className="flex flex-col  space-y-15">
             <div className="w-full flex  justify-between">
                 <div className="flex flex-row space-x-8">
@@ -69,10 +69,10 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
                     </div>
                 </div>
             </div>
-            {proudact.length==0?<div className="text-black min-h-80 text-4xl sm:text-sm md:text-2xl font-bold  flex justify-center ">'Loding.....'</div>:
+            {proudact.length==0?<div className={`text-black min-h-80 ${width>600?'text-4xl':'text-xl'} font-bold  flex justify-center`}>Loding.....</div>:
             <div className="min-h-100 px-10  relative w-full h-full flex flex-row flex-wrap gap-10">
                 {proudact?.map((ele,i)=>{
-                        return <Cart key={i} proudact={ele} orders={orders} defs={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
+                        return <Cart key={i} proudact={ele} orders={orders} defs={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} width={width}/>
                 })}
             </div>
         }

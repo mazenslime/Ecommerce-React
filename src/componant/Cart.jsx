@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 import BButton from './button'
 import { Link, useNavigate } from 'react-router-dom'
 import Lovepro from './Lovepro'
-const Cart = ({pro,proudact ,orders,defs,setLoveprouduct,Loveprouduct,cls=''}) =>{
+const Cart = ({pro,proudact ,orders,defs,setLoveprouduct,Loveprouduct,cls='',width}) =>{
   const navigation=useNavigate()
   function go(id){
     navigation(`/Pro/${id}`,{state:{proudact:proudact}})
@@ -16,16 +16,15 @@ const Cart = ({pro,proudact ,orders,defs,setLoveprouduct,Loveprouduct,cls=''}) =
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-    className={`relative  w-64 h-100 py-3 px-1.5 flex flex-col  justify-between   gap-1  ${cls}`}>
+    className={`relative  ${width>600?'w-64 h-100':'w-full'}  py-3 px-1.5 flex flex-col  justify-between   gap-2  ${cls}`}>
        <Lovepro proudact={proudact} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}/>
         <div className='relative w-full h-70 overflow-clip mx-auto '>
           <img src={proudact?.images[0]} alt="" className='w-full cursor-pointer h-full hover:scale-105 transition-transform duration-300 ' />
         </div>
-        <div className='h-15'>
+        <div className={`${width>600?'h-15':'h-fit py-2'}`}>
           <h3 className='text-black font-semibold text-md '>{proudact?.slug}</h3>
         </div>
-        <div className='flex flex-row justify-start h-10'>
-            {/* <p className='text-gray-700  font-semibold text-xl '>{proudact?.category?.name}</p> */}
+        <div className={`flex flex-row justify-start ${width>600?'h-10':'h-fit py-2'}`}>
             <p className='text-gray-700  font-semibold text-md '>{proudact?.price}$</p>
         </div>
         <div className='flex flex-row w-full justify-bettwen ' >

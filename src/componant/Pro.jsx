@@ -25,10 +25,10 @@ const Pro = ({orders, defs, scrll, width}) => {
         <p className='text-black font-light  text-md '>{data?.description}</p>
         {/* <p className='text-gray-700  font-semibold  text-xl '>{data?.category?.name}</p> */}
         {/* <Rating rate={data?.rating}/> */}
-         <div className={`flex flex-row items-center ${width>868?'justify-left':'justify-left'} w-full justify-between  gap-2`} >
+         <div className={`flex flex-row items-center ${width>868?'justify-left font-bold text-2xl':'justify-left font-semibold text-sm '} w-full justify-between  gap-2`} >
           <div className='flex-col space-y-1'>
-            <p className='text-black font-bold text-2xl  '>{data?.title}</p>
-            <p className='text-black  font-light text-2xl '>{data?.price}<span className='text-sm'> $</span> </p>
+            <p className='text-black '>{data?.title}</p>
+            <p className='text-black'>{data?.price}<span className='text-sm'> $</span> </p>
           </div>
             <BButton orders={orders} defs={defs} proudact={data} width={width}/>
         </div>
