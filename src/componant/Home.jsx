@@ -15,7 +15,7 @@ const Home = ({orders,setorders,Listcategoury,setLoveprouduct,Loveprouduct,cat,s
       <Hero/>
       <div className="px-10 mt-40 mb-20 ">
         <CategouryMain Listcategoury={Listcategoury} cat={cat} setcat={setcat}/>
-        <Proudacts pro={proudacts} order={orders} deforder={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} width={width}/>
+        <Proudacts pro={proudacts} order={orders} deforder={setorders} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} width={width} setcat={setcat}/>
       </div>
       <Footear/>
     </>

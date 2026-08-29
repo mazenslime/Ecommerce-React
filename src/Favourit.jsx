@@ -1,14 +1,14 @@
 import React from 'react'
 import Cart from './componant/Cart'
 
-function Favourit({Loveprouduct,setLoveprouduct,orders,defs}) {   
+function Favourit({Loveprouduct,setLoveprouduct,orders,defs,width}) {   
   return (
     <div className='w-full h-full'>
         <Found Loveprouduct={Loveprouduct} />
         <div className="w-3/4 mt-10 text-center overflow-x-auto h-full mx-auto">
             <div className='relative w-full  h-full flex flex-row  flex-wrap sm:justify-center gap-x-10 w-200 '>
                 {Loveprouduct?.map((ele,i)=>{
-                    return <Cart key={i}  proudact={ele} orders={orders} defs={defs} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} />
+                    return <Cart key={i}  proudact={ele} orders={orders} defs={defs} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} width={width} />
                 })}
             </div>
         </div>

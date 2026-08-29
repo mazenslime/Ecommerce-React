@@ -5,10 +5,10 @@ import Cart from './Cart'
 import Sidepar from './Sidepar'
 import Pagination from "./Pagination"
 import Sidebar from "./Sidebar"
-const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,setpaginate,setLoveprouduct,Loveprouduct,cat,setcat}) => {
+const ALLPROUDACT = ({Listcategoury,setListcategoury,width,setscrol,orders,setorders,paginate,setpaginate,setLoveprouduct,Loveprouduct,cat,setcat}) => {
     const Location=useLocation()
     const [openside,setopenside]=useState(false)
-    let query=`${cat==null?`products`:`categories/${cat}/products`}?limit=10&offset=${paginate*10}`
+    let query=`${cat==null?`products?limit=10&offset=${paginate*10}`:`categories/${cat}/products`}`
     useEffect(()=>{
         setscrol(true);
     })
@@ -25,7 +25,6 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
 
     useEffect(()=>{
         if(proudact.length==0){
-            console.log(proudact);     
             setLoding(false)
         }else{
             setLoding(true) 
@@ -56,7 +55,7 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
     
   return (
     <div className="w-full h-screen  px-10 ">
-        <Sidebar openside={openside} setopenside={setopenside} Listcategoury={Listcategoury} cat={cat} setcat={setcat} width={width} />
+        <Sidebar openside={openside} setopenside={setopenside} Listcategoury={Listcategoury} setListcategoury={setListcategoury} cat={cat} setcat={setcat} width={width} />
         <div className="flex flex-col  space-y-15">
             <div className="w-full flex  justify-between">
                 <div className="flex flex-row space-x-8">
@@ -82,4 +81,4 @@ const ALLPROUDACT = ({Listcategoury,width,setscrol,orders,setorders,paginate,set
   )
 }
 
-export default ALLPROUDACT
+export default React.memo(ALLPROUDACT)

@@ -10,6 +10,7 @@ import Pro from './componant/Pro'
 import List from './componant/list'
 import ALLPROUDACT from './componant/ALLPROUDACT'
 import Favourit from './Favourit'
+import { preconnect } from 'react-dom'
 function App() {
   const [orders,setorders]=useState([])
   const [scrll,setscrol]=useState(false)
@@ -22,6 +23,10 @@ function App() {
   const [Listcategoury,setListcategoury]=useState([]);
   const [paginate,setpaginate]=useState(1)
   const [cat,setcat]=useState(null);  
+  async ()=>{
+    preconnect('https://imgur.com/')
+    preconnect('https://api.escuelajs.co')
+  }
   window.addEventListener('scroll', function() {
    if(scrollY.get() > 300){
     setscrol(true);
@@ -35,16 +40,6 @@ function App() {
     setWidth(window.innerWidth);
 }
      
-    useEffect(()=>{
-        const categoury=async ()=>{
-            let response=await fetch(`https://api.escuelajs.co/api/v1/categories${Location=='/ALLPROUDACT'?'':'?limit=5'}`)
-            let data=await response.json()
-            setListcategoury(data)  
-        }
-        categoury()
-    return ()=> categoury();
-  },[Location])
-
   return (
     <>
     <BrowserRouter>
@@ -58,8 +53,8 @@ function App() {
           <Route path="/Login" element={<Login scrll={scrll} scrolls={setscrol} setlogin={setlogin} width={width}/>} /> 
           <Route path="/Pagecart" element={<Pagecart orders={orders} setorders={setorders}  scrolls={setscrol} width={width}/>} />
           <Route path="/pro/:id" element={<Pro  orders={orders} defs={setorders} scrll={setscrol} width={width}/>} />
-          <Route path="/ALLPROUDACT"  element={<ALLPROUDACT Listcategoury={Listcategoury} width={width} orders={orders} setorders={setorders}  setscrol={setscrol} paginate={paginate} setpaginate={setpaginate} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}  cat={cat} setcat={setcat}/>} />
-          <Route path="/favourt"  element={<Favourit  setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} orders={orders} defs={setorders} />} />
+          <Route path="/ALLPROUDACT"  element={<ALLPROUDACT Listcategoury={Listcategoury} setListcategoury={setListcategoury} width={width} orders={orders} setorders={setorders}  setscrol={setscrol} paginate={paginate} setpaginate={setpaginate} setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct}  cat={cat} setcat={setcat}/>} />
+          <Route path="/favourt"  element={<Favourit  setLoveprouduct={setLoveprouduct} Loveprouduct={Loveprouduct} orders={orders} defs={setorders} width={width} />} />
       </Routes>
     </BrowserRouter>
     </>
